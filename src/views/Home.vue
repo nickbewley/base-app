@@ -1,18 +1,21 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+div#main-container 
+  DiscoverRow
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import DiscoverRow from '@/components/discover/DiscoverRow.vue'
 </script>
+
+<style lang="stylus" scoped>
+h1
+  font-size: 35px
+  text-align: left
+h2
+  font-size: 20px
+  text-align: left
+#main-container
+  padding: contentSideMargin
+  margin-top: 30px
+  position: absolute
+</style>
