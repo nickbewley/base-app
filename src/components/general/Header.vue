@@ -13,11 +13,10 @@ router-view(v-slot="{ Component, route }")
         Suspense
           component(:is="Component")
           template(#fallback='')
-            div.loading-div
+            div.loading-div LOADING !!
 </template>
 
 <script setup>
-import { useRoute } from "vue-router"
-let route = useRoute() 
+import { useRoute } from "vue-router";
+let route = useRoute();
 </script>
-
