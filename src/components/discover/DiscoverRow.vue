@@ -9,17 +9,23 @@ section.discover-row
     )
 </template>
 
-<script setup>
-import DiscoverItem from '@/components/discover/DiscoverItem.vue'
+<script>
+import { defineComponent } from "vue";
+import { useDiscoverItemStore } from "@/stores/DiscoverItemStore";
 
-import { useDiscoverItemStore } from "@/stores/DiscoverItemStore"
-const DiscoverItemStore = useDiscoverItemStore()
-DiscoverItemStore.fetchItems()
+import DiscoverItem from "@/components/discover/DiscoverItem.vue";
+
+export default defineComponent({
+  async setup() {
+    const DiscoverItemStore = useDiscoverItemStore();
+    await DiscoverItemStore.fetchItems();
+  },
+});
 </script>
 
 <style lang="stylus" scoped>
 
-.discover-row 
+.discover-row
   width: calc(100vw - 100px)
   height: 100%
 
